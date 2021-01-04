@@ -3,18 +3,12 @@ import * as React from 'react';
 import {
   View,
   TextInput,
-  Button,
   Text,
   TouchableOpacity,
   StyleSheet,
-  ScrollView,
-  TouchableHighlight,
 } from 'react-native';
 import {addProduct, removeProduct} from '../reducers/action';
 import {connect} from 'react-redux';
-
-import productReducer from '../reducers/productReducer';
-import Card from '../feed/card';
 
 const initialState = {
   name: '',

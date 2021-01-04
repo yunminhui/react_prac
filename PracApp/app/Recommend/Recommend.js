@@ -4,25 +4,24 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
-  Image,
-  TouchableHighlight,
   SafeAreaView,
-  Button,
   Animated,
 } from 'react-native';
 import ItemImage from './ItemImage';
 import ScrollButton from './ScrollButton';
-import HomeScreen from '../Login/HomeScreen';
+import EnrollButton from './EnrollButton';
 
 class Recommend extends Component {
-  animatedButton = new Animated.Value(0);
-  animate = (value) => {
-    Animated.timing(this.animatedButton, {
-      toValue: 800,
-      duration: 1000,
-    }).start();
-  };
+  navigation = this.props.navigation;
+
+  // Todo:
+  // animatedButton = new Animated.Value(0);
+  // animate = (value) => {
+  //   Animated.timing(this.animatedButton, {
+  //     toValue: 800,
+  //     duration: 1000,
+  //   }).start();
+  // };
   render() {
     return (
       <View style={styles.container}>
@@ -35,32 +34,11 @@ class Recommend extends Component {
           </ScrollView>
         </SafeAreaView>
 
-        <TouchableOpacity>
-          <Image
-            style={[styles.button, {transform: [{rotate: '180deg'}]}]}
-            source={require('./img/다각형2.png')}
-          />
-        </TouchableOpacity>
-        {/*<ScrollButton style={{transform: [{rotate: '180deg'}]}} />*/}
+        <View style={{transform: [{rotate: '180deg'}]}}>
+          <ScrollButton />
+        </View>
 
-        <TouchableOpacity
-          sytle={styles.button}
-          // onPress={() => {
-          //   this.props.navigation.navigate('Feed');
-          //   // this.animate;
-          // }}>
-          onPress={this.animate}>
-          <Animated.View
-            style={[styles.completeButton, {marginLeft: this.animatedButton}]}>
-            <Image
-              style={{width: 80, height: 80}}
-              source={require('./img/shopping_cart.png')}
-            />
-            <Text style={{color: 'white', fontSize: 20, marginTop: 8}}>
-              등록
-            </Text>
-          </Animated.View>
-        </TouchableOpacity>
+        <EnrollButton navigation={this.navigation} />
       </View>
     );
   }
@@ -81,21 +59,10 @@ const styles = StyleSheet.create({
     marginTop: 80,
     marginBottom: 50,
   },
-  // button: {
-  //   margin: 10,
-  //   height: 30,
-  //   alignItems: 'center',
-  // },
   itemsClick: {
     borderWidth: 5,
     borderColor: 'yellow',
     borderRadius: 100,
-  },
-  completeButton: {
-    // marginTop: 25,
-    width: 80,
-    height: 80,
-    // alignItems: 'center',
   },
 });
 

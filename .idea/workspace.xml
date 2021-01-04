@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6ab0663-9026-4b4e-a788-33d7d7d5e416" name="Default Changelist" comment="" />
+    <list default="true" id="b6ab0663-9026-4b4e-a788-33d7d7d5e416" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracApp/app/Recommend/ItemImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/PracApp/app/Recommend/ItemImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracApp/app/Recommend/Recommend.js" beforeDir="false" afterPath="$PROJECT_DIR$/PracApp/app/Recommend/Recommend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracApp/app/Registration/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/PracApp/app/Registration/Registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracApp/app/User/Seller.js" beforeDir="false" afterPath="$PROJECT_DIR$/PracApp/app/User/Seller.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1lgtWxczpMkj1d8ZIKhoH7vtYYV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,12 +71,23 @@
       <workItem from="1609413113345" duration="152000" />
       <workItem from="1609413563431" duration="777000" />
       <workItem from="1609490850697" duration="359000" />
-      <workItem from="1609724128556" duration="6389000" />
+      <workItem from="1609724128556" duration="17290000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -78,7 +99,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/PracApp/app/Recommend/Recommend.js</url>
-          <line>71</line>
+          <line>49</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -92,8 +113,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/PracApp/app/Recommend/Recommend.js</url>
-          <line>74</line>
+          <line>52</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/PracApp/app/Recommend/EnrollButton.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

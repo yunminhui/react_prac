@@ -35,15 +35,6 @@ const image_fnames = [
 //     </View>
 //   );
 // });
-const images = () => {
-  return (
-    <View style={{flex: 1}}>
-      <TouchableOpacity>
-        <Image style={styles.item} source={require('./img/tomato.png')} />
-      </TouchableOpacity>
-    </View>
-  );
-};
 
 const styles = StyleSheet.create({
   itembox: {
