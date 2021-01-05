@@ -1,17 +1,14 @@
 import React from 'react';
-import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+  Animated,
+} from 'react-native';
 
-// const ItemImage = () => <View style={styles.itembox}>{images}</View>;
-const ItemImage = () => (
-  <View style={styles.itembox}>
-    {image_fnames.map((image, index) => (
-      <View>
-        <TouchableOpacity>
-          <Image style={styles.item} source={image} />
-        </TouchableOpacity>
-      </View>
-    ))}
-  </View>
+const ItemImage = (animationStyles, animate) => (
+  <View>{images(animationStyles, animate)}</View>
 );
 
 const image_fnames = [
@@ -26,15 +23,16 @@ const image_fnames = [
   require('./img/tomato.png'),
 ];
 
-// const images = image_fnames.map((image, index) => {
-//   return (
-//     <View>
-//       <TouchableOpacity>
-//         <Image style={styles.item} source={image} />
-//       </TouchableOpacity>
-//     </View>
-//   );
-// });
+const images = (animationStyles, animate) =>
+  image_fnames.map((image, index) => (
+    <View>
+      <TouchableOpacity onPress={() => animate}>
+        <Animated.View style={[styles.itembox, animationStyles]}>
+          <Image style={styles.item} source={image} />
+        </Animated.View>
+      </TouchableOpacity>
+    </View>
+  ));
 
 const styles = StyleSheet.create({
   itembox: {

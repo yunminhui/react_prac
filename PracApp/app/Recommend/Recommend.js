@@ -15,14 +15,17 @@ class Recommend extends Component {
   navigation = this.props.navigation;
 
   // Todo:
-  // animatedButton = new Animated.Value(0);
-  // animate = (value) => {
-  //   Animated.timing(this.animatedButton, {
-  //     toValue: 800,
-  //     duration: 1000,
-  //   }).start();
-  // };
+  animation = new Animated.Value(0);
+  animate = (value) => {
+    Animated.timing(this.animation, {
+      toValue: 250,
+      duration: 2000,
+    }).start();
+  };
   render() {
+    const animationStyles = {
+      transform: [{translateY: this.animation}],
+    };
     return (
       <View style={styles.container}>
         <Text style={styles.headerText}>관심상품을 선택하세요</Text>
@@ -30,7 +33,7 @@ class Recommend extends Component {
 
         <SafeAreaView style={{height: 400}}>
           <ScrollView>
-            <ItemImage />
+            <ItemImage animation={this.animation} animate={this.animate} />
           </ScrollView>
         </SafeAreaView>
 
