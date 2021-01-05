@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, Image, Text, TouchableHighlight} from 'react-native';
 
-import Card from '../feed/card';
+import Card from '../Feed/card';
 import {connect, useSelector} from 'react-redux';
 
 const Seller = ({navigation}) => {
@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   userContainer: {
-    width: '100%',
     height: 150,
     borderBottomWidth: 2,
     borderBottomColor: '#1d8830',
