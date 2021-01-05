@@ -1,18 +1,17 @@
 import React from 'react';
 import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 
-// const ItemImage = () => <View style={styles.itembox}>{images}</View>;
-const ItemImage = () => (
-  <View style={styles.itembox}>
-    {image_fnames.map((image, index) => (
-      <View>
-        <TouchableOpacity>
-          <Image style={styles.item} source={image} />
-        </TouchableOpacity>
-      </View>
-    ))}
-  </View>
-);
+const ItemImage = () => <View style={styles.itembox}>{images()}</View>;
+
+// const ItemImage = () => (
+//   <View style={styles.itembox}>
+//     {image_fnames.map((image, index) => (
+//       <TouchableOpacity>
+//         <Image style={styles.item} source={image} />
+//       </TouchableOpacity>
+//     ))}
+//   </View>
+// );
 
 const image_fnames = [
   require('./img/aubergine.png'),
@@ -35,15 +34,17 @@ const image_fnames = [
 //     </View>
 //   );
 // });
-const images = () => {
-  return (
-    <View style={{flex: 1}}>
-      <TouchableOpacity>
-        <Image style={styles.item} source={require('./img/tomato.png')} />
-      </TouchableOpacity>
-    </View>
-  );
-};
+
+const images = () =>
+  image_fnames.map((image, index) => {
+    return (
+      <View>
+        <TouchableOpacity>
+          <Image style={styles.item} source={image} />
+        </TouchableOpacity>
+      </View>
+    );
+  });
 
 const styles = StyleSheet.create({
   itembox: {

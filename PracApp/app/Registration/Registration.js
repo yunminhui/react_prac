@@ -14,7 +14,7 @@ import {addProduct, removeProduct} from '../reducers/action';
 import {connect} from 'react-redux';
 
 import productReducer from '../reducers/productReducer';
-import Card from '../feed/card';
+import Card from '../Feed/card';
 
 const initialState = {
   name: '',

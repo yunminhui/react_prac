@@ -6,9 +6,7 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  TouchableHighlight,
   SafeAreaView,
-  Button,
   Animated,
 } from 'react-native';
 import ItemImage from './ItemImage';

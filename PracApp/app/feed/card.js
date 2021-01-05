@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 
+const potatoImgPath = '../Recommend/img/potato.png';
+
 const Card = ({dDay, productName, price}) => {
   return (
     <View style={styles.container}>
@@ -13,8 +15,8 @@ const Card = ({dDay, productName, price}) => {
             D-day : {dDay}
           </Text>
         </View>
-        <View style={styles.ImgContainer}>
-          <Image source={require('../Recommend/img/potato.png')} />
+        <View style={styles.imageContainer}>
+          <Image source={require(potatoImgPath)} />
           <View>
             <Text style={styles.ProductContent}>상품명 : {productName}</Text>
             <Text style={styles.ProductContent}>₩ {price} (kg)</Text>
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     alignContent: 'space-between',
   },
-  ImgContainer: {
+  imageContainer: {
     flexDirection: 'row',
     margin: 5,
   },
