@@ -4,18 +4,16 @@ import {View, StyleSheet, Image, Text, TouchableHighlight} from 'react-native';
 import Card from '../Feed/card';
 import {useSelector} from 'react-redux';
 
+// const ProfileImage = () => (
+// 	<Image style={style.}>)
+
 const Seller = ({navigation}) => {
   const products = useSelector((state) => state.productReducer.products);
 
   return (
     <View style={styles.container}>
       <View style={styles.userContainer}>
-        <View style={styles.faceContainer}>
-          <Image
-            style={{width: 80, height: 80}}
-            source={require('./face.png')}
-          />
-        </View>
+        <Image style={styles.profileImage} source={require('./face.png')} />
         <View style={styles.itemInformation}>
           <Text style={styles.informationText}>5</Text>
           <Text style={styles.informationText}>상품수량</Text>
@@ -56,7 +54,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
   },
-  faceContainer: {
+  profileImage: {
     width: 100,
     height: 100,
     borderRadius: 100,
