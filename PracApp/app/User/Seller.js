@@ -31,6 +31,7 @@ const Seller = ({navigation}) => {
             productName={product.name}
             price={product.price}
             dDay={product.dDay}
+            key={index}
           />
         ))}
       </View>
