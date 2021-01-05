@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, StyleSheet, Image, Text, TouchableHighlight} from 'react-native';
 
 import Card from '../Feed/card';
-import {connect, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 const Seller = ({navigation}) => {
   const products = useSelector((state) => state.productReducer.products);
@@ -95,9 +95,4 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (state) => ({
-  products: state.productReducer.products, // Book 컴포넌트는 props.books를 통해 리덕스 스토어의 books에 접근할 수 있다.
-});
-
-// export default Seller;
-export default connect(mapStateToProps)(Seller);
+export default Seller;
