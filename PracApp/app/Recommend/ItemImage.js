@@ -7,8 +7,8 @@ import {
   Animated,
 } from 'react-native';
 
-const ItemImage = (animationStyles, animate) => (
-  <View>{images(animationStyles, animate)}</View>
+const ItemImage = ({animationStyles, animate}) => (
+  <View style={styles.itembox}>{images()}</View>
 );
 
 const image_fnames = [
@@ -23,16 +23,32 @@ const image_fnames = [
   require('./img/tomato.png'),
 ];
 
-const images = (animationStyles, animate) =>
-  image_fnames.map((image, index) => (
-    <View>
-      <TouchableOpacity onPress={() => animate}>
-        <Animated.View style={[styles.itembox, animationStyles]}>
-          <Image style={styles.item} source={image} />
-        </Animated.View>
-      </TouchableOpacity>
-    </View>
-  ));
+const images = () => {
+  const animate = (value, animatedComponent) => {
+    Animated.timing(animatedComponent, {
+      toValue: value,
+      duration: 1000,
+    }).start();
+  };
+  return image_fnames.map((image) => {
+    const animatedComponent = new Animated.Value(0);
+    return (
+      <View>
+        <TouchableOpacity>
+          {/* <Animated.View */}
+          {/*   style={[ */}
+          {/*     styles.itembox, */}
+          {/*     {transform: [{translateY: animatedComponent}]}, */}
+          {/*   ]}> */}
+          <View>
+            <Image style={styles.item} source={image} />
+          </View>
+          {/* </Animated.View> */}
+        </TouchableOpacity>
+      </View>
+    );
+  });
+};
 
 const styles = StyleSheet.create({
   itembox: {

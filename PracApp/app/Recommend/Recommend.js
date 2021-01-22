@@ -14,17 +14,16 @@ import EnrollButton from './EnrollButton';
 class Recommend extends Component {
   navigation = this.props.navigation;
 
-  // Todo:
-  animation = new Animated.Value(0);
-  animate = (value) => {
-    Animated.timing(this.animation, {
+  animationBottom = new Animated.Value(0);
+  animate = () => {
+    Animated.timing(this.animationBottom, {
       toValue: 250,
-      duration: 2000,
+      duration: 1000,
     }).start();
   };
   render() {
     const animationStyles = {
-      transform: [{translateY: this.animation}],
+      transform: [{translateY: this.animationBottom}],
     };
     return (
       <View style={styles.container}>
@@ -33,7 +32,11 @@ class Recommend extends Component {
 
         <SafeAreaView style={{height: 400}}>
           <ScrollView>
-            <ItemImage animation={this.animation} animate={this.animate} />
+            {/*<ItemImage
+              animationStyles={animationStyles}
+              animate={this.animate}
+						/>*/}
+            <ItemImage />
           </ScrollView>
         </SafeAreaView>
 

@@ -6,6 +6,7 @@ import Feed from './feed/feed';
 import Choice from './Choice/Choice';
 import Registration from './Registration/Registration';
 import Seller from './User/Seller';
+import Join from './Join/Join';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -52,8 +53,13 @@ class App extends Component {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="HomeScreen">
             <Stack.Screen
-              name="Home"
+              name="HomeScreen"
               component={HomeScreen}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Join"
+              component={Join}
               options={{headerShown: false}}
             />
             <Stack.Screen name="Choice" component={Choice} />

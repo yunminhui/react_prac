@@ -16,17 +16,13 @@ const CustomButton = ({navigation}) => {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    alignItems: 'flex-end',
-    paddingTop: 50,
+    //alignItems: 'flex-end',
+    //paddingTop: 50,
   },
   button: {
     height: 50,
-    paddingLeft: 20,
-    paddingRight: 20,
     backgroundColor: '#277e27',
     width: 100,
-    marginRight: 30,
-    marginTop: 15,
     justifyContent: 'center',
     alignItems: 'center',
   },

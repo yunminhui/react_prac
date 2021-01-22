@@ -1,5 +1,7 @@
 import {Component} from 'react';
+// JSX, component, useState
 import * as React from 'react';
+// mobile component
 import {
   View,
   TextInput,
@@ -7,16 +9,17 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import {addProduct, removeProduct} from '../reducers/action';
-import {connect} from 'react-redux';
+// handle global state
+import {connect, useSelector} from 'react-redux';
+import {addUser, authUser} from '../UserReducer/actions';
 
 const initialState = {
   name: '',
-  price: '',
-  dDay: '',
+  id: '',
+  pw: '',
 };
 
-class Registration extends Component {
+class Join extends Component {
   state = initialState;
   navigation = this.props.navigation;
 
@@ -27,47 +30,49 @@ class Registration extends Component {
     });
   };
 
-  addProduct = () => {
-    this.props.dispatchAddProduct(this.state);
+  addUser = () => {
+    this.props.dispatchAddUser(this.state);
     this.setState(initialState);
   };
-
-  removeProduct = (product) => {
-    this.props.dispatchRemoveProduct(product);
+  authUser = () => {
+    this.props.dispatchAuthUser(this.state);
+    this.setState(initialState);
   };
-
   render() {
-    const {products} = this.props;
-
     return (
       <View style={styles.container}>
-        <Text style={styles.headerText}>상품 정보 입력</Text>
+        <Text style={styles.headerText}>회원가입</Text>
         <TextInput
           value={this.state.name}
           onChangeText={(value) => this.updateInput('name', value)}
           style={styles.inputContainer}
-          placeholder="상품을 입력하세요"
+          placeholder="이름을 입력하세요"
         />
         <TextInput
           value={this.state.price}
-          onChangeText={(value) => this.updateInput('price', value)}
+          onChangeText={(value) => this.updateInput('id', value)}
           style={styles.inputContainer}
-          placeholder="가격을 입력하세요"
+          placeholder="아이디을 입력하세요"
         />
         <TextInput
-          value={this.state.dDay}
-          onChangeText={(value) => this.updateInput('dDay', value)}
+          value={this.state.pw}
+          onChangeText={(value) => this.updateInput('pw', value)}
           style={styles.inputContainer}
-          placeholder="유통기한을 입력하세요"
+          placeholder="비밀번호를 입력하세요"
         />
-        <TouchableOpacity style={styles.photoButton}>
-          <Text style={styles.photoText}>사진 등록하기</Text>
-        </TouchableOpacity>
+        <View style={styles.infoContainer}>
+          <TouchableOpacity style={styles.infoButton}>
+            <Text style={styles.infoText}>구매자</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.infoButton}>
+            <Text style={styles.infoText}>판매자</Text>
+          </TouchableOpacity>
+        </View>
         <TouchableOpacity
           style={styles.registerButton}
           onPress={() => {
-            this.addProduct();
-            this.navigation.goBack();
+            this.addUser();
+            this.navigation.navigate('HomeScreen');
           }}>
           <Text style={styles.registerText}>등록하기</Text>
         </TouchableOpacity>
@@ -88,8 +93,12 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#605e5e',
   },
-  photoButton: {
-    width: 300,
+  infoContainer: {
+    flexDirection: 'row',
+    marginTop: 20,
+  },
+  infoButton: {
+    width: 140,
     height: 50,
     borderWidth: 1,
     borderStyle: 'dashed',
@@ -97,9 +106,9 @@ const styles = StyleSheet.create({
     borderColor: '#918f8f',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 20,
+    margin: 10,
   },
-  photoText: {
+  infoText: {
     fontSize: 25,
     fontWeight: '500',
     color: '#888888',
@@ -131,13 +140,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapDispatchToProps = {
-  dispatchAddProduct: (product) => addProduct(product),
-  dispatchRemoveProduct: (product) => removeProduct(product),
-};
-
 const mapStateToProps = (state) => ({
-  products: state.productReducer.products,
+  users: state.userReducer.users,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Registration);
+const mapDispatchToProps = {
+  dispatchAddUser: (user) => addUser(user),
+  dispatchAuthUser: (user) => authUser(user),
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Join);
