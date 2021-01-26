@@ -27,9 +27,10 @@ const Choice = ({navigation}) => {
       {/*  navigation1={navigation}*/}
       {/*  page={'Registration'}*/}
       {/*/>*/}
+      <Text style={styles.headerText}>무엇을 하시겠습니까?</Text>
       <View style={styles.button}>
         <TouchableOpacity onPress={() => navigation.navigate('Recommend')}>
-          <Text style={styles.userText}>구매자</Text>
+          <Text style={styles.userText}>구 매</Text>
         </TouchableOpacity>
       </View>
 
@@ -37,7 +38,7 @@ const Choice = ({navigation}) => {
         style={styles.button}
         onPress={() => navigation.navigate('Seller')}>
         <View>
-          <Text style={styles.userText}>판매자</Text>
+          <Text style={styles.userText}>판 매</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -59,6 +60,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  headerText: {
+    textAlign: 'center',
+    fontSize: 25,
+    color: '#676767',
+    fontWeight: '300',
+    marginTop: -50,
   },
   button: {
     margin: 100,

@@ -64,6 +64,11 @@ const styles = StyleSheet.create({
     width: 80,
     marginBottom: 50,
   },
+  selected: {
+    borderWidth: 1,
+    borderColor: 'yellow',
+    borderRadius: 100,
+  },
 });
 
 export default ItemImage;

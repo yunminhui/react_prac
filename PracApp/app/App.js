@@ -62,7 +62,11 @@ class App extends Component {
               component={Join}
               options={{headerShown: false}}
             />
-            <Stack.Screen name="Choice" component={Choice} />
+            <Stack.Screen
+              name="Choice"
+              component={Choice}
+              options={{headerTitle: false, headerTintColor: 'green'}}
+            />
             <Stack.Screen
               name="Recommend"
               component={Recommend}
